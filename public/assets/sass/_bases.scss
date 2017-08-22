@@ -1,1 +1,41 @@
-
+	.carousel.carousel-slider {
+	bottom: 100px;
+	height: 100vh;
+	.btn{
+		width: 90%;
+		box-shadow: none;
+		background-color: $yellow;
+		margin-bottom: 110px;
+		height: 45px;
+		border-radius: 5px;
+		font-weight: bolder;
+		font-size: 16px;
+		padding: 4px;
+	}
+	.carousel-item p {
+		font-size: 18px;
+		padding: 0px 40px;
+		color: $graytxt;
+		h2{
+			font-size: 24px;
+		}
+	}
+	.box-carr{
+		margin-top: 80px;
+	}
+}
+.carousel .indicators{
+	bottom: 170px;
+	.indicator-item{
+		background-color: $graytxt;
+		height: 12px;
+		width: 12px;
+	}
+	.indicator-item.active {
+		background-color: $red;
+	}
+}
+.carousel-slider img{
+	width: 200px;
+	height: 200px;
+}
