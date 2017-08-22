@@ -1,4 +1,4 @@
-.pantalla-dos {
+.pantalla-tres {
 	margin: 23% 10%;
 	.celular {
 		width: 47%;
@@ -20,14 +20,6 @@
 			}
 		}
 	}
-	/*fin input con foto*/
-	/*[type="checkbox"]+label:before, 
-	/*[type="checkbox"]:not(.filled-in)+label:after {
-		width: 25px;
-		height: 25px;
-		border: 2px solid #d6d7d8;
-		border-radius: 4px;
-	}*/
 	.terms label {
 		font-size: 120%;
 		a {
@@ -35,6 +27,6 @@
 		}
 	}
 	.btn-continuar {
-		background: $amarillo-botones;
+		
 	}
 }
