@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
 
     //pantalla dos
@@ -32,37 +31,59 @@ $(document).ready(function(){
 
     validateRealTime();
 
+    //Valida numero de telefono y guarda en localStorage
     $(".btn-continuar").click(function(){
-        //$(".btn-continuar").attr('href', 'dos-b.html');
+        $(".btn-continuar").attr('href', 'dos-b.html');
         var cell = $("#phone").val();
         localStorage.setItem("phone", cell);
-        var telefono = localStorage.getItem("phone");
-
-        $.ajax({
-            url: '/api/registerNumber',
-            type: 'POST',
-            data: {'terms': 'true',
-            'phone': telefono
-           },
-        })
-        .done(function(res) {
-            var codigo = res.data.code;
-            localStorage.setItem("code", codigo);
-            var codigoStorage = localStorage.getItem("code");
-            $('#espacio_codigo').append(codigoStorage);
-            console.log("success");
-        })
-        .done(function(){
-            window.open('dos-b.html','_self',false);
-        })
-        .fail(function() {
-            console.log("error");
-        })
-        .always(function() {
-            console.log("complete");
-        });
-        
     })
+
+    var telefono = localStorage.getItem("phone");
+    console.log(telefono);
+    $('#espacio_fono').append('<h5>'+telefono+'</h5>');
+
+    $.ajax({
+        url: '/api/registerNumber',
+        type: 'POST',
+        data: {'terms': 'true',
+        'phone': telefono
+       },
+    })
+    .done(function(res) {
+        console.log(res);
+        console.log("success1");
+    })
+    .done(function(){
+        //window.open('dos-b.html','_self',false);
+    })
+    .fail(function() {
+        console.log("error1");
+    })
+    .always(function() {
+        console.log("complete");
+    });
+
+    //Crear Codigo
+    $.ajax({
+        url: '/api/resendCode',
+        type: 'POST',
+        data: {'phone': telefono},
+    })
+    .done(function(res) {
+        console.log(res);
+        console.log(res.data);
+        var code = res.data;
+        localStorage.setItem("code", code);
+        var codigoStorage = localStorage.getItem("code");
+         $('#espacio_codigo').append('<h5>'+codigoStorage+'</h5>');
+        console.log("success2");
+    })
+    .fail(function() {
+        console.log("error2");
+    })
+    .always(function() {
+        console.log("complete");
+    });
     //Fin pantalla dos
 })
 
