@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+	<title>Registrar Tarjeta</title>
+</head>
+<body>
+
+	<img class="engine right" src="img/icons/question.png" alt="">
+	<section class="pantalla-seis">
+		<div class="container">
+			<div class="row">
+				<div class="col s12 center">
+					<img src="img/icons/bcp-logo.png" alt="celular" class="celular">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12 center">
+					<h5>Registra tu tarjeta débito BCP</h5>
+					<p>Por ahora solo aceptamos cuentas de ahorro y/o corriente en soles.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12">
+					<div class="row cont-form">
+						<div class="col s2">
+							<img src="img/icons/card.png" alt="" class="responsive-img foto_tarjeta">
+						</div>
+						<div class="col s10">
+							<form class="col s12">
+								<div class="row">
+									<div class="input-field col s12">
+										<input id="phone" type="text" name="text" class="validate">
+									</div>
+								</div>
+							</form>
+						</div>
+						<hr>
+					</div>
+					<div class="row fila">
+						<div class="col s8 offset-s2 center">
+							<div class="col s3 offset-s1">
+								<img class="responsive-img" src="img/icons/scan.png" alt="">
+							</div>
+							<div class="col s7 padding_0">
+								<p>Escanear tarjeta</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s6">
+							<p>Fecha de vencimiento</p>
+						</div>
+						<div class="col s6">
+							<div class="col s5 cont-fecha">
+								<input placeholder="Mes" id="first_name" type="text" class="validate">
+								<hr> 
+							</div>
+							<div class="col s2">
+								<span>/</span>
+							</div>
+							<div class="col s5 cont-fecha">
+								<input placeholder="Año" id="first_name" type="text" class="validate">
+								<hr> 
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row center">
+				<a class="waves-effect waves-light btn btn-continuar disabled" name="subnewtopic" id="subnewtopic">CONTINUAR</a>
+			</div>
+			<!-- cambiar nombre de id de btn -->
+		</div>
+	</section>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

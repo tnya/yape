@@ -238,3 +238,75 @@ textarea.materialize-textarea:focus.valid {
     border-bottom: 1px solid $white;
     box-shadow: 0 1px 0 0 $white;
 }
+
+/*Pantalla 5*/
+.amarillo_cinco{
+	background-color: $amarillo_fondo;
+	height: 100vh;
+	img{
+		height: 150px;
+		margin-top: 50%;
+	}
+}
+/*FIN Pantalla 5*/
+
+/*Pantalla 6*/
+.engine{
+	margin-top: -75px;
+	margin-right: 10px;
+	width: 30px;
+}
+.pantalla-seis {
+	margin: 20% 10% 10%;
+	.celular {
+		width: 47%;
+	}
+	.foto_tarjeta{
+		margin-top: 10px;
+	}
+	.padding_0{
+		padding: 0;
+		p{
+			color: $turquesa;
+		}
+	}
+	/*inicio input con foto*/
+	.input-field input[type=text]:focus {
+		border-bottom: 1px solid white;
+		box-shadow: 0 1px 0 0 white;
+	}
+	input[type=text]:not(.browser-default) {
+		    border-bottom: 1px solid white;
+	}
+	form .row {
+		margin-bottom: 0;
+		.input-field {
+			margin-top: 0;
+			input {
+				margin-bottom: 5%;
+			}
+		}
+	}
+	.terms label {
+		font-size: 120%;
+		a {
+			color: #00c3a3;
+		}
+	}
+	.cont-fecha {
+		input {
+			margin-bottom: 0;
+			padding: 0 10%;
+			position: relative;
+			top: -2vh;
+		}
+		hr {
+			position: relative;
+			top: -2vh;
+		}
+	}
+	.btn-continuar {
+		background: $amarillo-botones;
+	}
+}
+/*Pantalla 6*/
