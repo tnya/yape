@@ -63,14 +63,76 @@
 
 /****salir.html***/
 #salir {
-	h3{
+	background-color: $purple;
+
+	h5{
 		color: $turq;
-		font-size: 2.8rem;
+		margin-top: 60px;
 	}
 
 	.texto_salir{
-		font-size: 2.5rem;
-		margin: -44.54rem 0 1.168rem;
+		font-size: 2rem;
+		//margin: -44.54rem 11px 46.168rem;
+	}
+	.subt {
+		margin-top: 20px;
+	}
+	img{
+		width: 50%;
+		margin-top: 30px;
 	}
 }
 
+/****profile.html****/
+.right {
+	i{
+		margin: 15px;
+		font-size: 30px;
+	}
+}
+.image-profile{
+    margin: 0 auto;
+    text-align: center;
+    img{
+        width: 100%;
+        margin-top: -15px;
+    }
+    .input-field {
+        margin-top: -20px;
+    }
+
+    .btn {
+        background-color: $yellow;
+        height: 45px;
+        border-radius: 0px;
+        box-shadow: none;
+    }
+    .file-field .file-path-wrapper{
+        background-color: $yellow;
+        height: 45px;
+    }
+    .file-field input[type=file]{
+        position: absolute;
+    }
+    input[type=text]:not(.browser-default){
+        background-color: $yellow;    
+        border: transparent;
+    }
+    .file-field span, input[type=range], input[type=range]+.thumb{
+        position: absolute;
+        right: 28%;
+    }
+}
+.profile-data{
+    height: 200px;
+    padding: 0 20px;
+    .el-profile-data{
+        background-color: $gray;
+        margin-top: 10px;
+        p{
+            display: inline-block;
+            color: $yellow;
+            margin-left: 10px;
+        }
+    }
+}
