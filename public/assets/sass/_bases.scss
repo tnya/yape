@@ -1,3 +1,64 @@
+/* INICIO PANTALLA CERO o INDEX*/
+#pantalla-cero{
+	height: 100vh;
+	background: rgba(88,39,68,1);
+	background: -moz-radial-gradient(center, ellipse cover, rgba(88,39,68,1) 0%, rgba(88,39,68,1) 30%, rgba(60,18,42,1) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(88,39,68,1)), color-stop(30%, rgba(88,39,68,1)), color-stop(100%, rgba(60,18,42,1)));
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(88,39,68,1) 0%, rgba(88,39,68,1) 30%, rgba(60,18,42,1) 100%);
+	background: -o-radial-gradient(center, ellipse cover, rgba(88,39,68,1) 0%, rgba(88,39,68,1) 30%, rgba(60,18,42,1) 100%);
+	background: -ms-radial-gradient(center, ellipse cover, rgba(88,39,68,1) 0%, rgba(88,39,68,1) 30%, rgba(60,18,42,1) 100%);
+	background: radial-gradient(ellipse at center, rgba(88,39,68,1) 0%, rgba(88,39,68,1) 30%, rgba(60,18,42,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#582744', endColorstr='#3c122a', GradientType=1 );
+	img{
+		width:50%;
+		margin-top:200px;
+		margin-bottom: 25px;
+	}
+	/* FIN PANTALLA CERO*/
+}
+
+
+/* INICIO PANTALLA TRES*/
+nav{
+	.fa-angle-left:before {
+	    margin: 15px;
+	    font-size: 30px;
+		}
+}
+.pantalla-tres {
+	margin-top: 100px;
+	.mensaje {
+		width: 47%;
+	}
+	p{
+		font-size:13px;
+	}
+	.cont-form{
+		img{
+			max-width: 5%;
+			margin: 10px 10px 0;
+
+		}
+		.input-field{
+			input[type=number]:not(.browser-default){
+				border-bottom: 1px solid #8f8f8f;
+    			box-shadow: 0 1px 0 0 #8f8f8f;
+				margin-bottom: 0;
+				/*height:0rem;*/
+			}
+		}
+	}
+	.contador{
+		p{
+			margin-top:0;
+			img{
+				max-width:5%;
+			}
+		}
+	}	
+	/* FIN PANTALLA TRES*/	
+}
+
 /**** uno.html ****/
 .carousel.carousel-slider {
 	bottom: 100px;
@@ -242,4 +303,3 @@
     margin: 30% auto;
 	}
 */
-

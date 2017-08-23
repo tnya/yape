@@ -2,24 +2,24 @@
 function uploadPic(){
          $('#image-user').attr('src', localStorage.fileImage); //muestra la imagen guardada
 
-         function readURL(input) { 
-         	if (input.files[0] != undefined) {  
-                var reader = new FileReader(); // funcion predefinida de javascript,
-                reader.onload = function (e) { 
-                	localStorage.fileImage =  e.target.result; 
-                	$('#image-user').attr('src', localStorage.fileImage);
-                }
-                reader.readAsDataURL(input.files[0]); 
-            }
-            else{
-            	$('#image-user').attr('src', 'img/icons/profile_pic.png');
-            }
-        }
-        
-        $("#imgInp").change(function(){ // cuando el input cambie llama a la funcion readUrl
-        	readURL(this); 
-        });
-    }uploadPic()
+       function readURL(input) { 
+        if (input.files[0] != undefined) {  
+              var reader = new FileReader(); // funcion predefinida de javascript,
+              reader.onload = function (e) { 
+                localStorage.fileImage =  e.target.result; 
+                $('#image-user').attr('src', localStorage.fileImage);
+              }
+              reader.readAsDataURL(input.files[0]); 
+          }
+          else{
+            $('#image-user').attr('src', 'img/icons/profile_pic.png');
+          }
+      }
+
+      $("#imgInp").change(function(){ // cuando el input cambie llama a la funcion readUrl
+        readURL(this); 
+      });
+  }uploadPic()
 
 $(document).ready(function(){
   $('.carousel.carousel-slider').carousel({dist: 0}); //inicialización de carrusel de materialize
@@ -110,15 +110,74 @@ $(document).ready(function(){
     });
     //Fin pantalla dos
 
-/* PANTALLA 2.5: BOTON COPIAR */
+  /* PANTALLA 2.5: BOTON COPIAR */
+  function copyToClipboard(element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+  }
+  //fin boton copiar
+  
+  //Funcion cuenta regresiva de pantalla 3
+  function c(){
+	var n=$('.c').attr('id');
+    var c=n;
+	$('.c').text(c);
+	setInterval(function(){
+		c--;
+      if(c>=0){
+        $('.c').text(c);
+      }
+      if(c==0){
+        $('.c').text(n);
+        //alert("Termine");
+      }
+    },1000);
+  }
 
-function copyToClipboard(element) {
-  var $temp = $("<input>");
-  $("body").append($temp);
-  $temp.val($(element).text()).select();
-  document.execCommand("copy");
-  $temp.remove();
-}
-//fin boton copiar
-  });
+  // Start
+  c();
+
+  // Loop
+  setInterval(function(){
+    c();
+  },21000);
+  //FIN Funcion cuenta regresiva de pantalla 3
+  
+    /* FIN PANTALLA TRES*/
+
+    console.log(localStorage.getItem(code))
+
+    required = function(fields) {
+        var valid = true;
+        fields.each(function () { // iterate all
+            var $this = $(this);
+            if (($this.is(':checkbox') && !$this.is(":checked")) || // checkbox
+            (($this.is(':text')) && !$this.val()) || (($this.is(':password')) && !$this.val())) {
+                valid = false;
+            }
+        });
+        return valid;
+    }
+
+    validateRealTimeTres = function () {
+        var fields = $("form :input:not(:hidden)"); // select required
+        fields.on('keyup change keypress blur', function () {
+            var codigo = $("#phone").val();
+            var codigoValidate = (/^[0-9]{9}$/).test(codigo);
+            console.log(codigo)
+            if (required(fields) && codigoValidate) {
+                {console.log("holi")} // action if all valid
+
+            } else {
+                {$(".btn-continuar").addClass("disabled")} // action if not valid
+            }
+        });
+    }
+
+    validateRealTimeTres();
+});
+
 
