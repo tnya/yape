@@ -136,3 +136,110 @@
         }
     }
 }
+
+.pantalla-dos {
+	margin: 23% 10%;
+	.celular {
+		width: 47%;
+	}
+	/*inicio input con foto*/
+	.input-field input[type=text]:focus {
+		border-bottom: 1px solid white;
+		box-shadow: 0 1px 0 0 white;
+	}
+	input[type=text]:not(.browser-default) {
+		    border-bottom: 1px solid white;
+	}
+	form .row {
+		margin-bottom: 0;
+		.input-field {
+			margin-top: 0;
+			input {
+				margin-bottom: 5%;
+			}
+		}
+	}
+	/*fin input con foto*/
+	/*[type="checkbox"]+label:before, 
+	/*[type="checkbox"]:not(.filled-in)+label:after {
+		width: 25px;
+		height: 25px;
+		border: 2px solid #d6d7d8;
+		border-radius: 4px;
+	}*/
+	.terms label {
+		font-size: 120%;
+		a {
+			color: #00c3a3;
+		}
+	}
+	.btn-continuar {
+		background: $amarillo-botones;
+	}
+}
+
+
+/* MODAL 2.5: Codigo enviado por la API */
+.pantalla_dos_b{
+		background: $amarillo_fondo;
+		padding-top: 40%;
+		height: 100vh;
+		.container{
+			padding: 0 auto;
+		}
+		.caja {
+			margin:0 auto;
+			margin-bottom: 5%;
+		}
+			.contenedor-codigo{
+			width:50%;
+			height:7vh;
+			border:1px solid $gris-boton;
+			border-radius:3px;
+			background-color:$white;
+		}
+		p{
+			font-size: 1.2rem;
+	    font-weight: bolder;
+		}
+
+		.btn,
+		.btn-flat,
+		.btn-floating,
+		.btn-large {
+		    font-size: 70%;
+		    outline: 0;
+		}
+
+		.btn,
+		.btn-flat,
+		.btn-large {
+		    border: none;
+		    border-radius: 2px;
+		    display: inline-block;
+		    height: 36px;
+		    line-height: 36px;
+		    padding: 0px 20%;
+		    text-transform: uppercase;
+		    vertical-align: middle;
+		}
+
+		.circle-black{
+			border: 5px solid black;
+			border-radius: 50%;
+			height: 120px;
+			width: 120px;
+			margin-bottom: 10px;
+		}
+
+		#mi-lock {
+			padding: 27%;
+			margin: -10% -9% auto;
+		}
+}
+
+/*img {
+    margin: 30% auto;
+	}
+*/
+
