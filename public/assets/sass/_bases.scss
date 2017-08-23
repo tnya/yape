@@ -1,4 +1,5 @@
-	.carousel.carousel-slider {
+/**** uno.html ****/
+.carousel.carousel-slider {
 	bottom: 100px;
 	height: 100vh;
 	.btn{
@@ -39,3 +40,37 @@
 	width: 200px;
 	height: 200px;
 }
+
+/**** tresymedio.html ****/
+.tresymedio {
+	.texto_tres{
+		padding: 10px 50px;
+		color: $graytxt;
+	}
+
+	.btn{
+		width: 65%;
+		box-shadow: none;
+		background-color: $yellow;
+		margin-bottom: 30px;
+		height: 40px;
+		border-radius: 5px;
+		font-weight: bolder;
+		font-size: 14px;
+		padding: 1px;
+	}
+}
+
+/****salir.html***/
+#salir {
+	h3{
+		color: $turq;
+		font-size: 2.8rem;
+	}
+
+	.texto_salir{
+		font-size: 2.5rem;
+		margin: -44.54rem 0 1.168rem;
+	}
+}
+
