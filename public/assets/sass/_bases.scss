@@ -112,6 +112,9 @@
 
 .pantalla-cuatro {
 	margin: 15% 10%;
+	p {
+		color:$gris-dark;
+	}
 	.row:first-child {
 		margin-bottom: 0;
 	}
@@ -137,6 +140,10 @@
 				color:$gris-dark;
 				position: relative;
 				top: 10px;
+			}
+			#pass{
+				position: relative;
+				top: 16px;
 			}
 		}
 	}
@@ -168,16 +175,40 @@
 	.btn-crear {
 		color:$white;
 		background: $amarillo-botones;
+		border-radius: 5px;
 		//padding: 10px 25px;
 	}
-	p{
-		color:$gris-dark;
-	}
+	.btn-flat.disabled,
+	.btn-flat:disabled,
+	.btn-flat[disabled],
+	.btn-floating.disabled,
+	.btn-floating:disabled,
+	.btn-floating[disabled],
+	.btn-large.disabled,
+	.btn-large:disabled,
+	.btn-large[disabled],
+	.btn.disabled,
+	.btn:disabled,
+	.btn[disabled],
+	.disabled.btn-large,
+	[disabled].btn-large {
+    pointer-events: none;
+    background-color: #DFDFDF!important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: $white!important;
+    cursor: default;
+}
+}
+.pantalla-cuatro{
+	p {
+    color: $gris;
+  }
 }
 //fin pantalla 4
 
 
-.select-wrapper.valid>input.select-dropdown, 
+.select-wrapper.valid>input.select-dropdown,
 input.valid:not([type]),
 input.valid:not([type]):focus,
 input[type=date].valid:not(.browser-default),
@@ -235,6 +266,6 @@ input[type=search]:not(.browser-default).valid,
 input[type=search]:not(.browser-default):focus.valid,
 textarea.materialize-textarea.valid,
 textarea.materialize-textarea:focus.valid {
-    border-bottom: 1px solid $white;
-    box-shadow: 0 1px 0 0 $white;
+  border-bottom: 1px solid $white;
+  box-shadow: 0 1px 0 0 $white;
 }
