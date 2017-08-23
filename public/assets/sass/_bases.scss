@@ -1,3 +1,5 @@
+/* PANTALLA 2 */
+
 .pantalla-dos {
 	margin: 23% 10%;
 	.celular {
@@ -38,9 +40,10 @@
 		background: $amarillo-botones;
 	}
 }
-
+//fin pantalla 2
 
 /* MODAL 2.5: Codigo enviado por la API */
+
 .pantalla_dos_b{
 		background: $amarillo_fondo;
 		padding-top: 40%;
@@ -103,6 +106,9 @@
     margin: 30% auto;
 	}
 */
+//fin pantalla 2.5
+
+/* PANTALLA 4 */
 
 .pantalla-cuatro {
 	margin: 15% 10%;
@@ -128,14 +134,19 @@
 			margin-top: 0;
 			input {
 				margin-bottom: 5%;
+				color:$gris-dark;
+				position: relative;
+				top: 10px;
 			}
 		}
 	}
 	.img-input {
-		width: 30%;
+		width: 58%;
+		padding-top: 26%;
 	}
 	.img-input-lock {
-		width: 25%;
+		width: 45%;
+		padding-top: 45%;
 	}
 	/*fin input con foto*/
 	/*[type="checkbox"]+label:before, 
@@ -151,11 +162,79 @@
 	.terms label {
 		font-size: 120%;
 		a {
-			color: #00c3a3;
+			color: $amarillo-botones;
 		}
 	}
-	.btn-continuar {
+	.btn-crear {
+		color:$white;
 		background: $amarillo-botones;
+		//padding: 10px 25px;
+	}
+	p{
+		color:$gris-dark;
 	}
 }
+//fin pantalla 4
 
+
+.select-wrapper.valid>input.select-dropdown, 
+input.valid:not([type]),
+input.valid:not([type]):focus,
+input[type=date].valid:not(.browser-default),
+input[type=date].valid:not(.browser-default):focus,
+input[type=datetime-local].valid:not(.browser-default),
+input[type=datetime-local].valid:not(.browser-default):focus,
+input[type=datetime].valid:not(.browser-default),
+input[type=datetime].valid:not(.browser-default):focus,
+input[type=email].valid:not(.browser-default),
+input[type=email].valid:not(.browser-default):focus,
+input[type=number].valid:not(.browser-default),
+input[type=number].valid:not(.browser-default):focus,
+input[type=password].valid:not(.browser-default),
+input[type=password].valid:not(.browser-default):focus,
+input[type=search].valid:not(.browser-default),
+input[type=search].valid:not(.browser-default):focus,
+input[type=tel].valid:not(.browser-default),
+input[type=tel].valid:not(.browser-default):focus,
+input[type=text].valid:not(.browser-default),
+input[type=text].valid:not(.browser-default):focus,
+input[type=time].valid:not(.browser-default),
+input[type=time].valid:not(.browser-default):focus,
+input[type=url].valid:not(.browser-default),
+input[type=url].valid:not(.browser-default):focus,
+textarea.materialize-textarea.valid,
+textarea.materialize-textarea.valid:focus {
+    border-bottom: 1px solid $white;
+    -webkit-box-shadow: 0 1px 0 0 $white;
+    box-shadow: 0 1px 0 0 $white;
+}
+
+input:not([type]).valid,
+input:not([type]):focus.valid,
+input[type=text]:not(.browser-default).valid,
+input[type=text]:not(.browser-default):focus.valid,
+input[type=password]:not(.browser-default).valid,
+input[type=password]:not(.browser-default):focus.valid,
+input[type=email]:not(.browser-default).valid,
+input[type=email]:not(.browser-default):focus.valid,
+input[type=url]:not(.browser-default).valid,
+input[type=url]:not(.browser-default):focus.valid,
+input[type=time]:not(.browser-default).valid,
+input[type=time]:not(.browser-default):focus.valid,
+input[type=date]:not(.browser-default).valid,
+input[type=date]:not(.browser-default):focus.valid,
+input[type=datetime]:not(.browser-default).valid,
+input[type=datetime]:not(.browser-default):focus.valid,
+input[type=datetime-local]:not(.browser-default).valid,
+input[type=datetime-local]:not(.browser-default):focus.valid,
+input[type=tel]:not(.browser-default).valid,
+input[type=tel]:not(.browser-default):focus.valid,
+input[type=number]:not(.browser-default).valid,
+input[type=number]:not(.browser-default):focus.valid,
+input[type=search]:not(.browser-default).valid,
+input[type=search]:not(.browser-default):focus.valid,
+textarea.materialize-textarea.valid,
+textarea.materialize-textarea:focus.valid {
+    border-bottom: 1px solid $white;
+    box-shadow: 0 1px 0 0 $white;
+}
