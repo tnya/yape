@@ -19,6 +19,12 @@
 
 
 /* INICIO PANTALLA TRES*/
+nav{
+	.fa-angle-left:before {
+	    margin: 15px;
+	    font-size: 30px;
+		}
+}
 .pantalla-tres {
 	margin-top: 100px;
 	.mensaje {
