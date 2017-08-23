@@ -40,3 +40,59 @@
 		background: $amarillo-botones;
 	}
 }
+
+
+.pantalla-cuatro {
+	margin: 15% 10%;
+	.row:first-child {
+		margin-bottom: 0;
+	}
+	.lock {
+		width: 47%;
+	}
+	/*inicio input con foto*/
+	.input-field input[type=text]:focus,
+	.input-field input[type=password]:focus {
+		border-bottom: 1px solid white;
+		box-shadow: 0 1px 0 0 white;
+	}
+	input[type=text]:not(.browser-default),
+	input[type=password]:not(.browser-default) {
+		border-bottom: 1px solid white;
+	}
+	form .row {
+		margin-bottom: 0;
+		.input-field {
+			margin-top: 0;
+			input {
+				margin-bottom: 5%;
+			}
+		}
+	}
+	.img-input {
+		width: 30%;
+	}
+	.img-input-lock {
+		width: 25%;
+	}
+	/*fin input con foto*/
+	/*[type="checkbox"]+label:before, 
+	/*[type="checkbox"]:not(.filled-in)+label:after {
+		width: 25px;
+		height: 25px;
+		border: 2px solid #d6d7d8;
+		border-radius: 4px;
+	}*/
+	input[type=text]:not(.browser-default) {
+		height: 2rem;
+	}
+	.terms label {
+		font-size: 120%;
+		a {
+			color: #00c3a3;
+		}
+	}
+	.btn-continuar {
+		background: $amarillo-botones;
+	}
+}
