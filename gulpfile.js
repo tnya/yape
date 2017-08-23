@@ -18,7 +18,7 @@ gulp.task('style', function(){
 	.pipe(sass().on('error', sass.logError))
 	.pipe(minifyCSS())
 	.pipe(concat('style.min.css'))//lo convierte en style.min.css
-	.pipe(gulp.dest('public/assets/css/'));//en la carpeta "dist"
+	.pipe(gulp.dest('public/assets/css/'));
 });
 
 // Watch SASS

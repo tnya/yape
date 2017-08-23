@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 app.use(morgan(format));
 
-let router = express.Router();
+var router = express.Router();
 
 router.get('/', (req, res) => {
   res.json({ name: 'yape-api',version: "0.0.1"});
