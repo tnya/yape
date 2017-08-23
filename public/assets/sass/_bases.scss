@@ -1,32 +1,55 @@
+/* INICIO PANTALLA CERO*/
+#pantalla-cero{
+	height: 100vh;
+	background: rgba(88,39,68,1);
+	background: -moz-radial-gradient(center, ellipse cover, rgba(88,39,68,1) 0%, rgba(88,39,68,1) 30%, rgba(60,18,42,1) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(88,39,68,1)), color-stop(30%, rgba(88,39,68,1)), color-stop(100%, rgba(60,18,42,1)));
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(88,39,68,1) 0%, rgba(88,39,68,1) 30%, rgba(60,18,42,1) 100%);
+	background: -o-radial-gradient(center, ellipse cover, rgba(88,39,68,1) 0%, rgba(88,39,68,1) 30%, rgba(60,18,42,1) 100%);
+	background: -ms-radial-gradient(center, ellipse cover, rgba(88,39,68,1) 0%, rgba(88,39,68,1) 30%, rgba(60,18,42,1) 100%);
+	background: radial-gradient(ellipse at center, rgba(88,39,68,1) 0%, rgba(88,39,68,1) 30%, rgba(60,18,42,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#582744', endColorstr='#3c122a', GradientType=1 );
+	img{
+		width:50%;
+		margin-top:200px;
+		margin-bottom: 25px;
+	}
+	/* FIN PANTALLA CERO*/
+}
+
+
+/* INICIO PANTALLA TRES*/
 .pantalla-tres {
-	margin: 23% 10%;
-	.celular {
+	margin-top: 100px;
+	.mensaje {
 		width: 47%;
 	}
-	/*inicio input con foto*/
-	.input-field input[type=text]:focus {
-		border-bottom: 1px solid white;
-		box-shadow: 0 1px 0 0 white;
+	p{
+		font-size:13px;
 	}
-	input[type=text]:not(.browser-default) {
-		    border-bottom: 1px solid white;
-	}
-	form .row {
-		margin-bottom: 0;
-		.input-field {
-			margin-top: 0;
-			input {
-				margin-bottom: 5%;
+	.cont-form{
+		img{
+			max-width: 5%;
+			margin: 10px 10px 0;
+
+		}
+		.input-field{
+			input[type=number]:not(.browser-default){
+				border-bottom: 1px solid #8f8f8f;
+    			box-shadow: 0 1px 0 0 #8f8f8f;
+				margin-bottom: 0;
+				height:0rem;
 			}
 		}
 	}
-	.terms label {
-		font-size: 120%;
-		a {
-			color: #00c3a3;
+	.contador{
+		p{
+			margin-top:0;
+			img{
+				max-width:5%;
+			}
 		}
-	}
-	.btn-continuar {
-		
-	}
+	}	
+	/* FIN PANTALLA TRES*/	
 }
+
