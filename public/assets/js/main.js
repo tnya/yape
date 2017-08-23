@@ -87,4 +87,13 @@ $(document).ready(function(){
     //Fin pantalla dos
 })
 
+/* PANTALLA 2.5: BOTON COPIAR */
 
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+//fin boton copiar
