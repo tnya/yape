@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <title>Yape</title>
+</head>
+<body>
+    <div class="pantalla_dos_b center">
+        <div class="container">
+            <div class="row">
+                <div class="col s6 offset-s3">
+                    <div class="circle-black">
+                        <img src="img/icons/lock-icon (1).png" alt="" id="mi-lock">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <div class="row caja">
+                        <div class="col offset-s1 s7 contenedor-codigo" id="espacio_codigo"></div>
+                        <div class="col s3">
+                            <a class="waves-effect waves-light btn" onclick="copyToClipboard('#espacio_codigo')">copy</a>
+                        </div>
+                    </div>
+                    <p class="center">Recuerda que tienes 21 segundos para registrar tu código en la pantalla siguiente</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--<div id="espacio_fono"></div>
+        <div id="espacio_codigo"></div>-->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
