@@ -20253,7 +20253,6 @@ if (jQuery) {
   };
 })(jQuery);
 
-/*función para que el usuario subir una imagen propia en su perfil, fuera del document.ready*/
 function uploadPic(){
          $('#image-user').attr('src', localStorage.fileImage); //muestra la imagen guardada
 
@@ -20380,6 +20379,21 @@ $(document).ready(function(){
     $temp.remove();
   }
   //fin boton copiar
+
+    validateRealTimeTres = function () {
+        var fields = $("form :input:not(:hidden)"); // select required
+        fields.on('keyup change keypress blur', function () {
+            var codigo = $("#code").val();
+            var codigoValidate = (/^[0-9]$/).test(codigo);
+            console.log(codigo)
+            if (required(fields) && codigoValidate) {
+                window.open('cuatro.html','_self',false); // action if all valid
+            } else {
+                window.open('tresymedio.html','_self',false); // action if not valid
+            }
+        });
+    }
+    validateRealTimeTres();
   
   //Funcion cuenta regresiva de pantalla 3
     function c(){
@@ -20405,33 +20419,6 @@ $(document).ready(function(){
   //FIN Funcion cuenta regresiva de pantalla 3
   
     /* FIN PANTALLA TRES*/
-
-    required = function(fields) {
-        var valid = true;
-        fields.each(function () { // iterate all
-            var $this = $(this);
-            if (($this.is(':checkbox') && !$this.is(":checked")) || // checkbox
-            (($this.is(':text')) && !$this.val()) || (($this.is(':password')) && !$this.val())) {
-                valid = false;
-            }
-        });
-        return valid;
-    }
-
-    validateRealTimeTres = function () {
-        var fields = $("form :input:not(:hidden)"); // select required
-        fields.on('keyup change keypress blur', function () {
-            var codigo = $("#phone").val();
-            var codigoValidate = (/^[0-9]{9}$/).test(codigo);
-            console.log(codigo)
-            if (required(fields) && codigoValidate) {
-                {console.log("holi")} // action if all valid
-            } else {
-                {$(".btn-continuar").addClass("disabled")} // action if not valid
-            }
-        });
-    }
-    validateRealTimeTres();
 
 
     $(".btn-crear").click(function(){
