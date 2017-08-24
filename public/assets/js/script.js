@@ -20369,20 +20369,23 @@ $(document).ready(function(){
     }
     validateRealTimeDos();
               
-              
+    validateRealTimeTres = function () {
+        var fields = $("form :input:not(:hidden)"); // select required
+        fields.on('keyup change keypress blur', function () {
+            var codigo = $("#my-code").val();
+            var codigoValidate = (/^[0-9]$/).test(codigo);
+            console.log(codigo)
+            if (required(fields) && codigoValidate==codigoStorage) {
+                window.open('cuatro.html','_self',false); // action if all valid
+            } else {
+                //window.open('tresymedio.html','_self',false); // action if not valid
+            }
+        });
+    }
+    validateRealTimeTres();
 
-  /* PANTALLA 2.5: BOTON COPIAR */
-  function copyToClipboard(element) {
-    var $temp = $("<input>");
-    $("body").append($temp);
-    $temp.val($(element).text()).select();
-    document.execCommand("copy");
-    $temp.remove();
-  }
-  //fin boton copiar
 
-
-
+    /* FIN PANTALLA TRES*/
   
   //Funcion cuenta regresiva de pantalla 3
     function c(){
@@ -20406,24 +20409,7 @@ $(document).ready(function(){
     c();
     },21000);
   //FIN Funcion cuenta regresiva de pantalla 3
-  
-    validateRealTimeTres = function () {
-        var fields = $("form :input:not(:hidden)"); // select required
-        fields.on('keyup change keypress blur', function () {
-            var codigo = $("#my-code").val();
-            var codigoValidate = (/^[0-9]$/).test(codigo);
-            console.log(codigo)
-            if (required(fields) && codigoValidate==codigoStorage) {
-                window.open('cuatro.html','_self',false); // action if all valid
-            } else {
-                window.open('tresymedio.html','_self',false); // action if not valid
-            }
-        });
-    }
-    validateRealTimeTres();
 
-
-    /* FIN PANTALLA TRES*/
 
     $(".btn-crear").click(function(){
         localStorage.setItem("name", $('#name').val());
@@ -20461,24 +20447,6 @@ $(document).ready(function(){
     });
     //fin pantalla cuatro
 
-    //inicio pantalla seis
-    validateRealTimeSeis = function () {
-        var fields = $("form :input:not(:hidden)"); // select required
-        fields.on('keyup change keypress blur', function () {
-            var cardNumber = $("#card_number").val();
-            var cardNumberValidate = (/^[0-9]{16}$/).test(cardNumber);
-            var mesN = $("#mes").val();
-            var mesNValidate = (/^[0-9]{2}$/).test(mesN);
-            var yearN = $("#year").val();
-            var yearNValidate = (/^[0-9]{2}$/).test(yearN);
-            if (required(fields) && cardNumberValidate && mesNValidate && yearNValidate) {
-                {$(".btn-tarjeta").removeClass("disabled")} // action if all valid
-            } else {
-                {$(".btn-tarjeta").addClass("disabled")} // action if not valid
-            }
-        });
-    }
-    validateRealTimeSeis();
 
     $(".btn-tarjeta").click(function(){
         $(".btn-tarjeta").attr('href', 'seismedio.html');
@@ -20487,20 +20455,7 @@ $(document).ready(function(){
         localStorage.setItem("year",$("#year").val());
     })
 
-    validateRealTimeSeisMedio = function () {
-        var fields = $("form :input:not(:hidden)"); // select required
-        fields.on('keyup change keypress blur', function () {
-            var pass = $("#passw").val();
-            var passValidate = (/^[0-9]{4}$/).test(pass);
-            localStorage.setItem("pass",pass);
-            if (required(fields) && passValidate) {
-                {$(".btn-registrar").removeClass("disabled")} // action if all valid
-            } else {
-                {$(".btn-registrar").addClass("disabled")} // action if not valid
-            }
-        });
-    }
-    validateRealTimeSeisMedio();
+
 
     $(".btn-registrar").click(function(){
         $(".btn-registrar").attr('href', 'profile.html');
@@ -20543,3 +20498,39 @@ $(document).ready(function(){
     $temp.remove();
   }
   //fin boton copiar
+
+
+//inicio pantalla seis
+validateRealTimeSeis = function () {
+    var fields = $("form :input:not(:hidden)"); // select required
+    fields.on('keyup change keypress blur', function () {
+        var cardNumber = $("#card_number").val();
+        var cardNumberValidate = (/^[0-9]{16}$/).test(cardNumber);
+        var mesN = $("#mes").val();
+        var mesNValidate = (/^[0-9]{2}$/).test(mesN);
+        var yearN = $("#year").val();
+        var yearNValidate = (/^[0-9]{2}$/).test(yearN);
+        if (required(fields) && cardNumberValidate && mesNValidate && yearNValidate) {
+            {$(".btn-tarjeta").removeClass("disabled")} // action if all valid
+        } else {
+            {$(".btn-tarjeta").addClass("disabled")} // action if not valid
+        }
+    });
+}
+validateRealTimeSeis();
+
+
+validateRealTimeSeisMedio = function () {
+    var fields = $("form :input:not(:hidden)"); // select required
+    fields.on('keyup change keypress blur', function () {
+        var pass = $("#passw").val();
+        var passValidate = (/^[0-9]{4}$/).test(pass);
+        localStorage.setItem("pass",pass);
+        if (required(fields) && passValidate) {
+            {$(".btn-registrar").removeClass("disabled")} // action if all valid
+        } else {
+            {$(".btn-registrar").addClass("disabled")} // action if not valid
+        }
+    });
+}
+validateRealTimeSeisMedio();
