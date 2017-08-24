@@ -1,5 +1,5 @@
 function uploadPic(){
-         $('#image-user').attr('src', localStorage.fileImage); //muestra la imagen guardada
+        $('#image-user').attr('src', localStorage.fileImage); //muestra la imagen guardada
 
        function readURL(input) { 
         if (input.files[0] != undefined) {  
@@ -18,11 +18,12 @@ function uploadPic(){
       $("#imgInp").change(function(){ // cuando el input cambie llama a la funcion readUrl
         readURL(this); 
       });
-  }uploadPic()
+}uploadPic()
 
 $(document).ready(function(){
-  $('.slider').slider(); //inicialización de carrusel de materialize
+    $('.slider').slider(); //inicialización de carrusel de materialize
 
+    $('#pseudo_tres').hide();
     //inicio pantalla dos
     required = function(fields) {
         var valid = true;
@@ -99,6 +100,13 @@ $(document).ready(function(){
         console.log("complete");
     });
     //Fin pantalla dos
+
+    //Para que no cambie el codigo generado por el API se crea la tres.html dinamicamente dentro del mismo html
+    $('#dos_btn_siguiente').click(function(event) {
+        event.preventDefault();
+        $('#pantalla_dos_b').hide();
+        $('#pseudo_tres').show();
+    });
 
 
     //inicio pantalla cuatro
@@ -243,7 +251,6 @@ $(document).ready(function(){
     $temp.remove();
   }
   //fin boton copiar
-
 
 //inicio pantalla seis
 validateRealTimeSeis = function () {

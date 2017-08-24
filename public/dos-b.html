@@ -7,7 +7,7 @@
     <title>Yape</title>
 </head>
 <body>
-    <div class="pantalla_dos_b center">
+    <div class="pantalla_dos_b center" id="pantalla_dos_b">
         <div class="container">
             <div class="row">
                 <div class="col s6 offset-s4 center">
@@ -28,11 +28,50 @@
                     </div>
                     <p class="center">Recuerda que tienes 21 segundos para registrar tu código en la pantalla siguiente</p>
                     <div class="row center white-text">
-                        <a class="waves-effect waves-light btn btn-next white-text" name="subnewtopic" id="dos_btn_siguiente" href="tres.html">Siguiente</a>
+                        <a class="waves-effect waves-light btn btn-next white-text" name="subnewtopic" id="dos_btn_siguiente" href="">Siguiente</a>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- esta seccion reemplaza al tres.html ya que cuando se hace click y redirecciona cambiaba el codigo, entonces en el DOM se hace show y hide -->
+    <div id="pseudo_tres">
+        <nav class="transparent z-depth-0">
+          <a href="dos-b.html" class="grey-text text-darken-4"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+        </nav>
+        <section class="pantalla-tres">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 center">
+                        <img src="img/icons/message.png" alt="celular" class="mensaje">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 center">
+                        <h5>Ahora ingresa tu código</h5>
+                        <p class="grey-text">Enviamos un mensaje con el código de validación al número <span id="espacio_fono"></span></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <div class="row cont-form">
+                            <div class="col s12 input-field">
+                                <img src="img/icons/lock.png" alt="" class="responsive-img">
+                                <input id="my-code" type="number" name="text" class="validate">
+                            </div>
+                        </div>
+                        <div class="row center">
+                            <div class="col s12 center">
+                                <div class="contador">
+                                    <p class="grey-text">Reintentar en <img src="img/icons/clock.png" alt=""> <span class="c" id="21"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <script src="assets/js/script.js"></script>
