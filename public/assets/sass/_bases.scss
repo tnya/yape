@@ -301,6 +301,9 @@ textarea.materialize-textarea:focus.valid {
 			color: $turquesa;
 		}
 	}
+	.escanear_texto{
+		margin: 0;
+	}
 	/*inicio input con foto*/
 	.input-field input[type=text]:focus {
 		border-bottom: 1px solid white;
@@ -337,6 +340,66 @@ textarea.materialize-textarea:focus.valid {
 		}
 	}
 	.btn-continuar {
+		background: $amarillo-botones;
+	}
+}
+
+.icono_left{
+	margin-top: -75px;
+	margin-left: 10px;
+}
+
+.pantalla_seis_medio {
+	margin: 20% 10% 0%;
+	.celular {
+		width: 47%;
+	}
+	.foto_tarjeta{
+		width: 28px;
+	}
+	.padding_0{
+		padding: 0;
+		p{
+			color: $turquesa;
+		}
+	}
+	/*inicio input con foto*/
+	.input-field input[type=text]:focus {
+		border-bottom: 1px solid white;
+		box-shadow: 0 1px 0 0 white;
+	}
+	input[type=text]:not(.browser-default) {
+		    border-bottom: 1px solid white;
+	}
+	form .row {
+		margin-bottom: 0;
+		.input-field {
+			margin-top: 0;
+			input {
+				margin-bottom: 5%;
+			}
+		}
+	}
+	.terms label {
+		font-size: 120%;
+		a {
+			color: #00c3a3;
+		}
+	}
+	.cont-fecha {
+		input {
+			margin-bottom: 0;
+			padding: 0 10%;
+			position: relative;
+			top: -2vh;
+		}
+		hr {
+			position: relative;
+			top: -2vh;
+		}
+	}
+	.btn-continuar {
+		margin-top: 40px;
 		background: $amarillo-botones;
 	}
 }
