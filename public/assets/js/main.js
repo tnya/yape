@@ -121,34 +121,29 @@ $(document).ready(function(){
   //fin boton copiar
   
   //Funcion cuenta regresiva de pantalla 3
-  function c(){
-	var n=$('.c').attr('id');
-    var c=n;
-	$('.c').text(c);
-	setInterval(function(){
-		c--;
-      if(c>=0){
+    function c(){
+        var n=$('.c').attr('id');
+        var c=n;
         $('.c').text(c);
-      }
-      if(c==0){
-        $('.c').text(n);
-        //alert("Termine");
-      }
-    },1000);
-  }
-
-  // Start
-  c();
-
-  // Loop
-  setInterval(function(){
+        setInterval(function(){
+        	c--;
+          if(c>=0){
+            $('.c').text(c);
+          }
+          if(c==0){
+            $('.c').text(n);
+            window.open('tresymedio.html','_self',false);
+          }
+        },1000);
+    }
+    c();
+    // Loop
+    setInterval(function(){
     c();
   },21000);
   //FIN Funcion cuenta regresiva de pantalla 3
   
     /* FIN PANTALLA TRES*/
-
-    console.log(localStorage.getItem(code))
 
     required = function(fields) {
         var valid = true;

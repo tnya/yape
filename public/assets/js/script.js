@@ -20253,33 +20253,32 @@ if (jQuery) {
   };
 })(jQuery);
 
-
-/*función para que el usuario subir una imagen propia en su perfil*/
+/*función para que el usuario subir una imagen propia en su perfil, fuera del document.ready*/
 function uploadPic(){
          $('#image-user').attr('src', localStorage.fileImage); //muestra la imagen guardada
 
-         function readURL(input) { 
-         	if (input.files[0] != undefined) {  
-                var reader = new FileReader(); // funcion predefinida de javascript,
-                reader.onload = function (e) { 
-                	localStorage.fileImage =  e.target.result; 
-                	$('#image-user').attr('src', localStorage.fileImage);
-                }
-                reader.readAsDataURL(input.files[0]); 
-            }
-            else{
-            	$('#image-user').attr('src', 'img/icons/profile_pic.png');
-            }
-        }
-        
-        $("#imgInp").change(function(){ // cuando el input cambie llama a la funcion readUrl
-        	readURL(this); 
-        });
-    }uploadPic()
+       function readURL(input) { 
+        if (input.files[0] != undefined) {  
+              var reader = new FileReader(); // funcion predefinida de javascript,
+              reader.onload = function (e) { 
+                localStorage.fileImage =  e.target.result; 
+                $('#image-user').attr('src', localStorage.fileImage);
+              }
+              reader.readAsDataURL(input.files[0]); 
+          }
+          else{
+            $('#image-user').attr('src', 'img/icons/profile_pic.png');
+          }
+      }
+
+      $("#imgInp").change(function(){ // cuando el input cambie llama a la funcion readUrl
+        readURL(this); 
+      });
+  }uploadPic()
 
 $(document).ready(function(){
   $('.carousel.carousel-slider').carousel({dist: 0}); //inicialización de carrusel de materialize
-  
+
     //pantalla dos
 	required = function(fields) {
         var valid = true;
@@ -20376,33 +20375,30 @@ $(document).ready(function(){
   }
   //fin boton copiar
   
-      
-    /* INICIO PANTALLA TRES*/
+  //Funcion cuenta regresiva de pantalla 3
     function c(){
-      var n=$('.c').attr('id');
+        var n=$('.c').attr('id');
         var c=n;
-      $('.c').text(c);
-      setInterval(function(){
-        c--;
-        if(c>=0){
-          $('.c').text(c);
-        }
-            if(c==0){
-                $('.c').text(n);
-            }
-      },1000);
+        $('.c').text(c);
+        setInterval(function(){
+        	c--;
+          if(c>=0){
+            $('.c').text(c);
+          }
+          if(c==0){
+            $('.c').text(n);
+            window.open('tresymedio.html','_self',false);
+          }
+        },1000);
     }
-
-    // Start
     c();
-
     // Loop
     setInterval(function(){
-      c();
-    },21000);
+    c();
+  },21000);
+  //FIN Funcion cuenta regresiva de pantalla 3
+  
     /* FIN PANTALLA TRES*/
-
-    console.log(localStorage.getItem(code))
 
     required = function(fields) {
         var valid = true;
@@ -20432,5 +20428,6 @@ $(document).ready(function(){
     }
 
     validateRealTimeTres();
+});
 
-})
+
