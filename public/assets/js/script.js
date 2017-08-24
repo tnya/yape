@@ -20279,13 +20279,13 @@ function uploadPic(){
 $(document).ready(function(){
   $('.carousel.carousel-slider').carousel({dist: 0}); //inicialización de carrusel de materialize
 
-    //pantalla dos
+    //inicio pantalla dos
 	required = function(fields) {
         var valid = true;
         fields.each(function () { // iterate all
             var $this = $(this);
             if (($this.is(':checkbox') && !$this.is(":checked")) || // checkbox
-            (($this.is(':text')) && !$this.val())) { // radio
+            (($this.is(':text')) && !$this.val()) || (($this.is(':password')) && !$this.val())) {
                 valid = false;
             }
         });
@@ -20360,10 +20360,79 @@ $(document).ready(function(){
     .fail(function() {
         console.log("error2");
     })
+
     .always(function() {
         console.log("complete");
     });
     //Fin pantalla dos
+
+
+    //inicio pantalla cuatro
+    validateRealTimeDos = function () {
+        var fields = $("form :input:not(:hidden)"); // select required
+        fields.on('keyup change keypress blur', function () {
+            if (required(fields)) {
+                {$(".btn-crear").removeClass("disabled")} // action if all valid
+
+            } else {
+                {$(".btn-crear").addClass("disabled")} // action if not valid
+            }
+        });
+    }
+
+    validateRealTimeDos();
+
+    $(".btn-crear").click(function(){
+        localStorage.setItem("name", $('#name').val());
+        localStorage.setItem("email", $('#email').val());
+        localStorage.setItem("password", $('#pass').val());
+        $(".btn-crear").attr('href', 'cinco.html');
+    })
+
+    var nombre = localStorage.getItem("name");
+    var correo = localStorage.getItem("email");
+    var contrasena = localStorage.getItem("password");
+
+    //Impimimos los datos en profile.html
+    $('#name-profile-data').html(nombre);
+    $('#email-profile-data').html(nombre);
+    $('#card-profile-data').html(nombre);
+
+    //API para registrar al usuario
+    $.ajax({
+        url: '/api/createUser',
+        type: 'POST',
+        data: {'phone': telefono,
+        'name': nombre,
+        'email': correo,
+        'password': contrasena
+        },
+    })
+    .done(function(res) {
+        console.log(res);
+        console.log("success3");
+    })
+    .fail(function() {
+        console.log("error3");
+    })
+
+    .always(function() {
+        console.log("complete");
+    });
+    //fin pantalla cuatro
+
+
+    /* PANTALLA 2.5: BOTON COPIAR */
+    function copyToClipboard(element) {
+      var $temp = $("<input>");
+      $("body").append($temp);
+      $temp.val($(element).text()).select();
+      document.execCommand("copy");
+      $temp.remove();
+    }
+    //fin boton copiar
+
+})
 
   /* PANTALLA 2.5: BOTON COPIAR */
   function copyToClipboard(element) {
@@ -20429,5 +20498,3 @@ $(document).ready(function(){
 
     validateRealTimeTres();
 });
-
-
