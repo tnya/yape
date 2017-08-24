@@ -183,8 +183,7 @@ $(document).ready(function(){
 
     //Impimimos los datos en profile.html
     $('#name-profile-data').html(nombre);
-    $('#email-profile-data').html(nombre);
-    $('#card-profile-data').html(nombre);
+    $('#email-profile-data').html(correo);
 
     //API para registrar al usuario
     $.ajax({
@@ -256,6 +255,8 @@ $(document).ready(function(){
     var monthNumber = localStorage.getItem("month");
     var yearNumber = localStorage.getItem("year");
     var passNumber = localStorage.getItem("pass");
+    //imprimimos el numero de tarjeta
+    $('#card-profile-data').html(tarjetaNumber);
 
     $.ajax({
         url: '/api/registerCard',
