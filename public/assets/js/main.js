@@ -126,15 +126,6 @@ $(document).ready(function(){
     validateRealTimeDos();
               
               
-  /* PANTALLA 2.5: BOTON COPIAR */
-  function copyToClipboard(element) {
-    var $temp = $("<input>");
-    $("body").append($temp);
-    $temp.val($(element).text()).select();
-    document.execCommand("copy");
-    $temp.remove();
-  }
-  //fin boton copiar
   
   //Funcion cuenta regresiva de pantalla 3
     function c(){
@@ -230,3 +221,13 @@ $(document).ready(function(){
    
 });
 
+/* PANTALLA 2.5: BOTON COPIAR */
+  function copyToClipboard(element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+  }
+  //fin boton copiar
+  

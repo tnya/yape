@@ -285,6 +285,7 @@ nav{
 		padding: 0px 20%;
 		text-transform: uppercase;
 		vertical-align: middle;
+		font-size: 12px;
 	}
 
 	.circle-black{
@@ -298,6 +299,11 @@ nav{
 	#mi-lock {
 		padding: 27%;
 		margin: -10% -9% auto;
+	}
+
+	.row .col.offset-s4 {
+    margin-left: 28.333333%;
+    margin-top: -13%;
 	}
 }
 
