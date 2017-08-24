@@ -105,7 +105,6 @@ $(document).ready(function(){
     .fail(function() {
         console.log("error2");
     })
-
     .always(function() {
         console.log("complete");
     });
@@ -121,7 +120,10 @@ $(document).ready(function(){
 
             } else {
                 {$(".btn-crear").addClass("disabled")} // action if not valid
-
+            }
+        });
+    }
+    validateRealTimeDos();
               
               
   /* PANTALLA 2.5: BOTON COPIAR */
@@ -154,7 +156,7 @@ $(document).ready(function(){
     // Loop
     setInterval(function(){
     c();
-  },21000);
+    },21000);
   //FIN Funcion cuenta regresiva de pantalla 3
   
     /* FIN PANTALLA TRES*/
@@ -182,17 +184,11 @@ $(document).ready(function(){
 
             } else {
                 {$(".btn-continuar").addClass("disabled")} // action if not valid
-
-              
-              
-              
             }
         });
     }
+    validateRealTimeTres();
 
-    
-    
-    validateRealTimeDos();
 
     $(".btn-crear").click(function(){
         localStorage.setItem("name", $('#name').val());
@@ -227,27 +223,10 @@ $(document).ready(function(){
     .fail(function() {
         console.log("error3");
     })
-
     .always(function() {
         console.log("complete");
     });
     //fin pantalla cuatro
-
-
-    /* PANTALLA 2.5: BOTON COPIAR */
-    function copyToClipboard(element) {
-      var $temp = $("<input>");
-      $("body").append($temp);
-      $temp.val($(element).text()).select();
-      document.execCommand("copy");
-      $temp.remove();
-    }
-    //fin boton copiar
-
-})
-
-
-
-    validateRealTimeTres();
+   
 });
 

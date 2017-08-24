@@ -20360,7 +20360,6 @@ $(document).ready(function(){
     .fail(function() {
         console.log("error2");
     })
-
     .always(function() {
         console.log("complete");
     });
@@ -20379,8 +20378,72 @@ $(document).ready(function(){
             }
         });
     }
-
     validateRealTimeDos();
+              
+              
+  /* PANTALLA 2.5: BOTON COPIAR */
+  function copyToClipboard(element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+  }
+  //fin boton copiar
+  
+  //Funcion cuenta regresiva de pantalla 3
+    function c(){
+        var n=$('.c').attr('id');
+        var c=n;
+        $('.c').text(c);
+        setInterval(function(){
+        	c--;
+          if(c>=0){
+            $('.c').text(c);
+          }
+          if(c==0){
+            $('.c').text(n);
+            window.open('tresymedio.html','_self',false);
+          }
+        },1000);
+    }
+    c();
+    // Loop
+    setInterval(function(){
+    c();
+    },21000);
+  //FIN Funcion cuenta regresiva de pantalla 3
+  
+    /* FIN PANTALLA TRES*/
+
+    required = function(fields) {
+        var valid = true;
+        fields.each(function () { // iterate all
+            var $this = $(this);
+            if (($this.is(':checkbox') && !$this.is(":checked")) || // checkbox
+            (($this.is(':text')) && !$this.val()) || (($this.is(':password')) && !$this.val())) {
+                valid = false;
+            }
+        });
+        return valid;
+    }
+
+    validateRealTimeTres = function () {
+        var fields = $("form :input:not(:hidden)"); // select required
+        fields.on('keyup change keypress blur', function () {
+            var codigo = $("#phone").val();
+            var codigoValidate = (/^[0-9]{9}$/).test(codigo);
+            console.log(codigo)
+            if (required(fields) && codigoValidate) {
+                {console.log("holi")} // action if all valid
+
+            } else {
+                {$(".btn-continuar").addClass("disabled")} // action if not valid
+            }
+        });
+    }
+    validateRealTimeTres();
+
 
     $(".btn-crear").click(function(){
         localStorage.setItem("name", $('#name').val());
@@ -20415,86 +20478,10 @@ $(document).ready(function(){
     .fail(function() {
         console.log("error3");
     })
-
     .always(function() {
         console.log("complete");
     });
     //fin pantalla cuatro
-
-
-    /* PANTALLA 2.5: BOTON COPIAR */
-    function copyToClipboard(element) {
-      var $temp = $("<input>");
-      $("body").append($temp);
-      $temp.val($(element).text()).select();
-      document.execCommand("copy");
-      $temp.remove();
-    }
-    //fin boton copiar
-
-})
-
-  /* PANTALLA 2.5: BOTON COPIAR */
-  function copyToClipboard(element) {
-    var $temp = $("<input>");
-    $("body").append($temp);
-    $temp.val($(element).text()).select();
-    document.execCommand("copy");
-    $temp.remove();
-  }
-  //fin boton copiar
-  
-  //Funcion cuenta regresiva de pantalla 3
-    function c(){
-        var n=$('.c').attr('id');
-        var c=n;
-        $('.c').text(c);
-        setInterval(function(){
-        	c--;
-          if(c>=0){
-            $('.c').text(c);
-          }
-          if(c==0){
-            $('.c').text(n);
-            window.open('tresymedio.html','_self',false);
-          }
-        },1000);
-    }
-    c();
-    // Loop
-    setInterval(function(){
-    c();
-  },21000);
-  //FIN Funcion cuenta regresiva de pantalla 3
-  
-    /* FIN PANTALLA TRES*/
-
-    required = function(fields) {
-        var valid = true;
-        fields.each(function () { // iterate all
-            var $this = $(this);
-            if (($this.is(':checkbox') && !$this.is(":checked")) || // checkbox
-            (($this.is(':text')) && !$this.val()) || (($this.is(':password')) && !$this.val())) {
-                valid = false;
-            }
-        });
-        return valid;
-    }
-
-    validateRealTimeTres = function () {
-        var fields = $("form :input:not(:hidden)"); // select required
-        fields.on('keyup change keypress blur', function () {
-            var codigo = $("#phone").val();
-            var codigoValidate = (/^[0-9]{9}$/).test(codigo);
-            console.log(codigo)
-            if (required(fields) && codigoValidate) {
-                {console.log("holi")} // action if all valid
-
-            } else {
-                {$(".btn-continuar").addClass("disabled")} // action if not valid
-            }
-        });
-    }
-
-    validateRealTimeTres();
+   
 });
+
