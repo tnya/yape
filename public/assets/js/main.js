@@ -25,7 +25,7 @@ $(document).ready(function(){
   $('.carousel.carousel-slider').carousel({dist: 0}); //inicialización de carrusel de materialize
 
     //inicio pantalla dos
-	required = function(fields) {
+    required = function(fields) {
         var valid = true;
         fields.each(function () { // iterate all
             var $this = $(this);
@@ -41,7 +41,6 @@ $(document).ready(function(){
         var fields = $("form :input:not(:hidden)"); // select required
         fields.on('keyup change keypress blur', function () {
             var cell = $("#phone").val();
-            
             var cellValidate = (/^[0-9]{9}$/).test(cell);
             console.log(cell)
             if (required(fields) && cellValidate) {
@@ -52,7 +51,6 @@ $(document).ready(function(){
             }
         });
     }
-
     validateRealTime();
 
     //Valida numero de telefono y guarda en localStorage
@@ -63,7 +61,6 @@ $(document).ready(function(){
     })
 
     var telefono = localStorage.getItem("phone");
-    console.log(telefono);
     $('#espacio_fono').append('<h5>'+telefono+'</h5>');
 
     $.ajax({
@@ -71,14 +68,10 @@ $(document).ready(function(){
         type: 'POST',
         data: {'terms': 'true',
         'phone': telefono
-       },
+       }
     })
     .done(function(res) {
-        console.log(res);
         console.log("success1");
-    })
-    .done(function(){
-        //window.open('dos-b.html','_self',false);
     })
     .fail(function() {
         console.log("error1");
@@ -94,8 +87,6 @@ $(document).ready(function(){
         data: {'phone': telefono},
     })
     .done(function(res) {
-        console.log(res);
-        console.log(res.data);
         var code = res.data;
         localStorage.setItem("code", code);
         var codigoStorage = localStorage.getItem("code");
@@ -117,7 +108,6 @@ $(document).ready(function(){
         fields.on('keyup change keypress blur', function () {
             if (required(fields)) {
                 {$(".btn-crear").removeClass("disabled")} // action if all valid
-
             } else {
                 {$(".btn-crear").addClass("disabled")} // action if not valid
             }
@@ -142,7 +132,7 @@ $(document).ready(function(){
         var c=n;
         $('.c').text(c);
         setInterval(function(){
-        	c--;
+            c--;
           if(c>=0){
             $('.c').text(c);
           }
@@ -181,7 +171,6 @@ $(document).ready(function(){
             console.log(codigo)
             if (required(fields) && codigoValidate) {
                 {console.log("holi")} // action if all valid
-
             } else {
                 {$(".btn-continuar").addClass("disabled")} // action if not valid
             }
@@ -214,10 +203,9 @@ $(document).ready(function(){
         'name': nombre,
         'email': correo,
         'password': contrasena
-        },
+        }
     })
     .done(function(res) {
-        console.log(res);
         console.log("success3");
     })
     .fail(function() {
@@ -227,6 +215,74 @@ $(document).ready(function(){
         console.log("complete");
     });
     //fin pantalla cuatro
-   
-});
 
+    //inicio pantalla seis
+    validateRealTimeSeis = function () {
+        var fields = $("form :input:not(:hidden)"); // select required
+        fields.on('keyup change keypress blur', function () {
+            var cardNumber = $("#card_number").val();
+            var cardNumberValidate = (/^[0-9]{16}$/).test(cardNumber);
+            var mesN = $("#mes").val();
+            var mesNValidate = (/^[0-9]{2}$/).test(mesN);
+            var yearN = $("#year").val();
+            var yearNValidate = (/^[0-9]{2}$/).test(yearN);
+            if (required(fields) && cardNumberValidate && mesNValidate && yearNValidate) {
+                {$(".btn-tarjeta").removeClass("disabled")} // action if all valid
+            } else {
+                {$(".btn-tarjeta").addClass("disabled")} // action if not valid
+            }
+        });
+    }
+    validateRealTimeSeis();
+
+    $(".btn-tarjeta").click(function(){
+        $(".btn-tarjeta").attr('href', 'seismedio.html');
+        localStorage.setItem("card",$("#card_number").val());
+        localStorage.setItem("month",$("#mes").val());
+        localStorage.setItem("year",$("#year").val());
+    })
+
+    validateRealTimeSeisMedio = function () {
+        var fields = $("form :input:not(:hidden)"); // select required
+        fields.on('keyup change keypress blur', function () {
+            var pass = $("#passw").val();
+            var passValidate = (/^[0-9]{4}$/).test(pass);
+            localStorage.setItem("pass",pass);
+            if (required(fields) && passValidate) {
+                {$(".btn-registrar").removeClass("disabled")} // action if all valid
+            } else {
+                {$(".btn-registrar").addClass("disabled")} // action if not valid
+            }
+        });
+    }
+    validateRealTimeSeisMedio();
+
+    $(".btn-registrar").click(function(){
+        $(".btn-registrar").attr('href', 'profile.html');
+    });
+
+    var tarjetaNumber = localStorage.getItem("card");
+    var monthNumber = localStorage.getItem("month");
+    var yearNumber = localStorage.getItem("year");
+    var passNumber = localStorage.getItem("pass");
+
+    $.ajax({
+        url: '/api/registerCard',
+        type: 'POST',
+        data: {'userId': telefono,
+        'cardNumber': tarjetaNumber,
+        'cardMonth': monthNumber,
+        'cardYear': yearNumber,
+        'cardPassword': passNumber
+        }
+    })
+    .done(function(res) {
+        console.log("success4");
+    })
+    .fail(function() {
+        console.log("error4");
+    })
+    .always(function() {
+        console.log("complete");
+    });
+});
