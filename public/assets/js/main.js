@@ -126,20 +126,7 @@ $(document).ready(function(){
   }
   //fin boton copiar
 
-    validateRealTimeTres = function () {
-        var fields = $("form :input:not(:hidden)"); // select required
-        fields.on('keyup change keypress blur', function () {
-            var codigo = $("#code").val();
-            var codigoValidate = (/^[0-9]$/).test(codigo);
-            console.log(codigo)
-            if (required(fields) && codigoValidate) {
-                window.open('cuatro.html','_self',false); // action if all valid
-            } else {
-                window.open('tresymedio.html','_self',false); // action if not valid
-            }
-        });
-    }
-    validateRealTimeTres();
+
 
   
   //Funcion cuenta regresiva de pantalla 3
@@ -165,8 +152,23 @@ $(document).ready(function(){
     },21000);
   //FIN Funcion cuenta regresiva de pantalla 3
   
-    /* FIN PANTALLA TRES*/
+    validateRealTimeTres = function () {
+        var fields = $("form :input:not(:hidden)"); // select required
+        fields.on('keyup change keypress blur', function () {
+            var codigo = $("#my-code").val();
+            var codigoValidate = (/^[0-9]$/).test(codigo);
+            console.log(codigo)
+            if (required(fields) && codigoValidate==codigoStorage) {
+                window.open('cuatro.html','_self',false); // action if all valid
+            } else {
+                window.open('tresymedio.html','_self',false); // action if not valid
+            }
+        });
+    }
+    validateRealTimeTres();
 
+
+    /* FIN PANTALLA TRES*/
 
     $(".btn-crear").click(function(){
         localStorage.setItem("name", $('#name').val());

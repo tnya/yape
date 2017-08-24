@@ -20370,8 +20370,7 @@ $(document).ready(function(){
     validateRealTimeDos();
               
               
-<<<<<<< HEAD
-=======
+
   /* PANTALLA 2.5: BOTON COPIAR */
   function copyToClipboard(element) {
     var $temp = $("<input>");
@@ -20382,21 +20381,8 @@ $(document).ready(function(){
   }
   //fin boton copiar
 
-    validateRealTimeTres = function () {
-        var fields = $("form :input:not(:hidden)"); // select required
-        fields.on('keyup change keypress blur', function () {
-            var codigo = $("#code").val();
-            var codigoValidate = (/^[0-9]$/).test(codigo);
-            console.log(codigo)
-            if (required(fields) && codigoValidate) {
-                window.open('cuatro.html','_self',false); // action if all valid
-            } else {
-                window.open('tresymedio.html','_self',false); // action if not valid
-            }
-        });
-    }
-    validateRealTimeTres();
->>>>>>> 8f7f4c6da53cdaa4e661d8ce82a16e7a695de910
+
+
   
   //Funcion cuenta regresiva de pantalla 3
     function c(){
@@ -20421,8 +20407,23 @@ $(document).ready(function(){
     },21000);
   //FIN Funcion cuenta regresiva de pantalla 3
   
-    /* FIN PANTALLA TRES*/
+    validateRealTimeTres = function () {
+        var fields = $("form :input:not(:hidden)"); // select required
+        fields.on('keyup change keypress blur', function () {
+            var codigo = $("#code").val();
+            var codigoValidate = (/^[0-9]$/).test(codigo);
+            console.log(codigo)
+            if (required(fields) && codigoValidate==codigoStorage) {
+                window.open('cuatro.html','_self',false); // action if all valid
+            } else {
+                window.open('tresymedio.html','_self',false); // action if not valid
+            }
+        });
+    }
+    validateRealTimeTres();
 
+  
+    /* FIN PANTALLA TRES*/
 
     $(".btn-crear").click(function(){
         localStorage.setItem("name", $('#name').val());
@@ -20461,18 +20462,6 @@ $(document).ready(function(){
     });
     //fin pantalla cuatro
 
-<<<<<<< HEAD
-/* PANTALLA 2.5: BOTON COPIAR */
-  function copyToClipboard(element) {
-    var $temp = $("<input>");
-    $("body").append($temp);
-    $temp.val($(element).text()).select();
-    document.execCommand("copy");
-    $temp.remove();
-  }
-  //fin boton copiar
-  
-=======
     //inicio pantalla seis
     validateRealTimeSeis = function () {
         var fields = $("form :input:not(:hidden)"); // select required
@@ -20543,7 +20532,6 @@ $(document).ready(function(){
         console.log("complete");
     });
 });
-
 
 /* PANTALLA 2.5: BOTON COPIAR */
   function copyToClipboard(element) {
