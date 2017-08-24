@@ -21,7 +21,7 @@ function uploadPic(){
   }uploadPic()
 
 $(document).ready(function(){
-  $('.carousel.carousel-slider').carousel({dist: 0}); //inicialización de carrusel de materialize
+  $('.slider').slider(); //inicialización de carrusel de materialize
 
     //inicio pantalla dos
     required = function(fields) {
