@@ -111,8 +111,6 @@ $(document).ready(function(){
 
 
 
-
-
     /* FIN PANTALLA TRES*/
   
   //Funcion cuenta regresiva de pantalla 3
@@ -152,6 +150,7 @@ $(document).ready(function(){
 
     //Impimimos los datos en profile.html
     $('#name-profile-data').html(nombre);
+    $('#hola_span_nombre').html(nombre);
     $('#email-profile-data').html(correo);
 
     //API para registrar al usuario

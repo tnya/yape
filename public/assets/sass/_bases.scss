@@ -809,6 +809,12 @@ textarea.materialize-textarea:focus.valid {
 	.fila{
 		margin-bottom: 0;
 	}
+	.hola{
+		margin-top: -10px;
+		h4{
+			margin: 0;
+		} 
+	}
 	.morado_light{
 		padding: 7% 0 2%;
 		img{
@@ -831,11 +837,14 @@ textarea.materialize-textarea:focus.valid {
 			margin-bottom: 8px;
 		}
 	}
+	.morado_light_2{
+		padding: 1.5% 0%;
+	}
 }
 
 .morado_dark{
 	background-color: $morado_dark;
-	padding-bottom: 29%;
+	padding-bottom: 35%;
 	h6{
 		margin: 0;
 		padding: 4%;
