@@ -20364,33 +20364,8 @@ $(document).ready(function(){
     });
 
 
-    //inicio pantalla cuatro
-    validateRealTimeDos = function () {
-        var fields = $("form :input:not(:hidden)"); // select required
-        fields.on('keyup change keypress blur', function () {
-            if (required(fields)) {
-                {$(".btn-crear").removeClass("disabled")} // action if all valid
-            } else {
-                {$(".btn-crear").addClass("disabled")} // action if not valid
-            }
-        });
-    }
-    validateRealTimeDos();
-              
-    validateRealTimeTres = function () {
-        var fields = $("form :input:not(:hidden)"); // select required
-        fields.on('keyup change keypress blur', function () {
-            var codigo = $("#my-code").val();
-            var codigoValidate = (/^[0-9]$/).test(codigo);
-            console.log(codigo)
-            if (required(fields) && codigoValidate==codigoStorage) {
-                window.open('cuatro.html','_self',false); // action if all valid
-            } else {
-                //window.open('tresymedio.html','_self',false); // action if not valid
-            }
-        });
-    }
-    validateRealTimeTres();
+
+
 
 
     /* FIN PANTALLA TRES*/
@@ -20506,6 +20481,50 @@ $(document).ready(function(){
     $temp.remove();
   }
   //fin boton copiar
+
+    /*validateRealTimeTres = function () {
+        var fields = $("form :input:not(:hidden)"); // select required
+        fields.on('keyup change keypress blur', function () {
+            var codigo = $("#my-code").val();
+            var codigoValidate = (/^[0-9]$/).test(codigo);
+            console.log(codigo)
+            if (required(fields) && codigoValidate==localStorage.getItem("code")) {
+                $(".btn-redirec").attr('href', 'cuatro.html');
+                //window.open('cuatro.html','_self',false); // action if all valid
+            } else {
+                $(".btn-redirec").click(function(){
+                    alert("código inválido");
+                })
+                //window.open('tresymedio.html','_self',false); // action if not valid
+            }
+        });
+    }
+    validateRealTimeTres();*/
+    $(".btn-redirec").click(function(){
+        var codigo = $("#my-code").val();
+        //var codigoValidate = (/^[0-9]$/).test(codigo);
+        if (/*codigoValidate && */ codigo == localStorage.getItem("code")){
+            $(".btn-redirec").attr('href', 'cuatro.html');
+        } else {
+            $(".cont-span").empty();
+            $(".cont-span").append('<span>Código Inválido</span>');
+        }
+    })
+
+        //inicio pantalla cuatro
+    validateRealTimeDos = function () {
+        var fields = $("form :input:not(:hidden)"); // select required
+        fields.on('keyup change keypress blur', function () {
+            var miPass = $('#pass').val();
+            var miPassValidate = (/^[0-9]{6}$/).test(miPass);
+            if (required(fields) && miPassValidate) {
+                {$(".btn-crear").removeClass("disabled")} // action if all valid
+            } else {
+                {$(".btn-crear").addClass("disabled")} // action if not valid
+            }
+        });
+    }
+    validateRealTimeDos();
 
 //inicio pantalla seis
 validateRealTimeSeis = function () {
