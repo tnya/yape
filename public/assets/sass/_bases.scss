@@ -213,7 +213,7 @@ nav{
 }
 .profile-data{
     height: 200px;
-    padding: 0 20px;
+    padding: 20px;
     .el-profile-data{
         background-color: $gray;
         margin-top: 10px;
@@ -268,7 +268,6 @@ nav{
 }
 //fin pantalla 2
 
-/* MODAL 2.5: Codigo enviado por la API */
 
 /* MODAL 2.5: Codigo enviado por la API */
 
@@ -278,6 +277,9 @@ nav{
 	height: 100vh;
 	.container{
 		padding: 0 auto;
+	}
+	#dos_btn_siguiente{
+		margin-top: 30px;
 	}
 	.caja {
 		margin:0 auto;
@@ -643,7 +645,36 @@ textarea.materialize-textarea:focus.valid {
 		margin-top: 40px;
 		background: $amarillo-botones;
 	}
+
+	input:not([type]):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+	    border-bottom: 1px solid $white; 
+	    -webkit-box-shadow: 0 1px 0 0 $white; 
+	    box-shadow: 0 1px 0 0 $white; 
+	}
+
+	input:not([type]), input[type=date]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=email]:not(.browser-default), input[type=number]:not(.browser-default), input[type=password]:not(.browser-default), input[type=search]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=text]:not(.browser-default), 
+	input[type=time]:not(.browser-default), 
+	input[type=url]:not(.browser-default), 
+	textarea.materialize-textarea {
+	    background-color: transparent;
+	    border: none;
+	    border-bottom: 1px solid $white; 
+	    border-radius: 0;
+	    outline: 0;
+	    height: 3rem;
+	    width: 100%;
+	    font-size: 1rem;
+	    margin: 0 0 20px;
+	    padding: 0;
+	    -webkit-box-shadow: none;
+	    box-shadow: none;
+	    -webkit-box-sizing: content-box;
+	    box-sizing: content-box;
+	    -webkit-transition: all .3s;
+	    transition: all .3s;
+	}
 }
+
 /*FIN Pantalla 6*/
 
 
@@ -849,12 +880,13 @@ textarea.materialize-textarea:focus.valid {
 	}
 	.morado_light_2{
 		padding: 1.5% 0%;
+		margin-bottom: 10px;
 	}
 }
 
 .morado_dark{
 	background-color: $morado_dark;
-	padding-bottom: 35%;
+	padding-bottom: 39%;
 	h6{
 		margin: 0;
 		padding: 4%;

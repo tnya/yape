@@ -20449,6 +20449,9 @@ $(document).ready(function(){
     var passNumber = localStorage.getItem("pass");
     //imprimimos el numero de tarjeta
     $('#card-profile-data').html(tarjetaNumber);
+    var tarjeta_corta = tarjetaNumber.substr(12);
+
+    $('#tarjeta_ultimos_digitos').html('***' + tarjeta_corta);
 
     $.ajax({
         url: '/api/registerCard',
